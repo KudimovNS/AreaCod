@@ -1,0 +1,27 @@
+#include <iostream>
+#include <cmath>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "Russian");
+
+    int x1, y1, x2, y2, x3, y3;
+
+    cout << "Введите координаты вершины A : " << endl;
+    cin >> x1 >> y1;
+    cout << "Введите координаты вершины B : " << endl;
+    cin >> x2 >> y2;
+    cout << "Введите координаты вершины C : " << endl;
+    cin >> x3 >> y3;
+
+    double sideAB = sqrt(pow(x2 - x1, 2) + pow(y2 - y1, 2));
+    double sideBC = sqrt(pow(x3 - x2, 2) + pow(y3 - y2, 2));
+    double sideCA = sqrt(pow(x1 - x3, 2) + pow(y1 - y3, 2));
+
+    double p = (sideAB + sideBC + sideCA) / 2;
+    double triangleArea = sqrt(p * (p - sideAB) * (p - sideBC) * (p - sideCA));
+
+    cout << "Площадь треугольника = " << triangleArea << endl;
+
+    return 0;
+}
